@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.sky {
+  background: linear-gradient(to bottom, #87CEEB, #FFDAB9);
+  width: 100%;
+  height: 100%; 
+  position: relative;
+  transition: background 2s ease;  
+}
+
+.sun {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  width: 120px;
+  height: 120px;
+  background: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 50px 20px rgba(255, 215, 0, 0.5);
+  transition: background 2s ease, box-shadow 2s ease, top 0.5s ease;
+  z-index: 10;
+}
+
+.sun:hover {
+  background: #df6b56;
+  box-shadow: 0 0 50px 20px rgba(255, 99, 71, 0.7); 
+}
+
+.sun:hover ~ .sky {
+  background: linear-gradient(to bottom, #e5e772, #d89a28);
+  transition: background 2s ease;
+}
+
+.tree {
+  position: absolute;
+  top: 180px; 
+  right: 10px; 
+  transform: rotate(-10deg);
+}
+
+.tree img {
+  width: 150px; 
+}
+
+.sand {
+  background: linear-gradient(to bottom, #f3db95, rgb(2, 2, 143)  );
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.boat {
+  position: absolute;
+  bottom: 39%;
+  left: 30%;
+  transform: translateX(-50%);
+  animation: boatFloat 3s ease-in-out infinite, boatMove 50s linear infinite;
+  z-index: 3;
+}
+
+.boat img {
+  width: 120px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.boat:hover img {
+  transform: translateY(200%); 
+} 
+
+@keyframes boatFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@keyframes boatMove {
+  0% {
+    left: -30px; 
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.water {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@keyframes waveMovement {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(15%) rotate(2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.wave1 {
+  position: absolute;
+  bottom: 145px;
+  width: 100%;
+  height: 100%;
+  background: rgb(8, 8, 185);
+  clip-path: path("M0,200 C100,150 300,250 500,200 C700,150 900,250 1000,200 L1000,400 L0,400 Z");
+  animation: waveMovement 6s ease-in-out infinite;
+}
+
+.wave2 {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  height: 100%;
+  background: rgb(80, 149, 228);
+  clip-path: path("M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,200 L0,200 Z");
+  animation: waveMovement 6s ease-in-out infinite 1s;
+}
+
+.wave3 {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 100%;
+  background: rgb(8, 8, 185); 
+  clip-path: path("M0,190 C200,120 400,190 600,150 C800,110 1000,180 1200,130 L1200,400 L0,400 Z");
+  animation: waveMovement 6s ease-in-out infinite 2s; 
+  z-index: 2;
+}
