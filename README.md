@@ -1,4 +1,4 @@
-# README - Projeto "Praia Animada"
+# Prainha
 
 Este projeto é uma atividade desenvolvida para a disciplina de **Desenvolvimento Web**. A proposta é criar uma página web interativa utilizando HTML e CSS, explorando animações, interações e estilizações avançadas.
 
