@@ -2,6 +2,9 @@
 
 Este projeto é uma atividade desenvolvida para a disciplina de **Desenvolvimento Web**. A proposta é criar uma página web interativa utilizando HTML e CSS, explorando animações, interações e estilizações avançadas.
 
+![](./images/tarde-prainha.png)
+![](./images/fim-de-tarde-prainha.png)
+
 ---
 
 ## 🖼️ Demonstração
@@ -11,7 +14,7 @@ A página representa um cenário tropical com:
 - **Céu** com gradiente dinâmico que muda ao interagir com o sol.
 - **Sol** animado que muda de cor e posição ao ser clicado.
 - **Água** com ondas animadas em movimento.
-- **Barco** flutuante que desliza pela tela e reage ao hover.
+- **Barco** flutuante.
 - **Árvore** decorativa posicionada na areia.
 - **Areia** com transições de cores.
 
@@ -39,8 +42,6 @@ A página representa um cenário tropical com:
 ### 🛶 Barco
 
 - Animação de flutuação para simular movimento na água.
-- Desloca-se horizontalmente pela tela em um loop infinito.
-- Reage ao hover, simulando submersão.
 
 ### 🌴 Árvore
 
