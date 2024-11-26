@@ -12,6 +12,7 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  margin: 0 auto; 
 }
 
 .sky {
@@ -47,7 +48,7 @@ body {
 
 .tree {
   position: absolute;
-  top: 180px; 
+  top: 30vh; 
   right: 10px; 
   transform: rotate(-10deg);
 }
@@ -64,9 +65,18 @@ body {
   bottom: 0;
 }
 
+@keyframes boatFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(22px);
+  }
+}
+
 .boat {
   position: absolute;
-  bottom: 39%;
+  bottom: 45%;
   left: 30%;
   transform: translateX(-50%);
   animation: boatFloat 3s ease-in-out infinite, boatMove 50s linear infinite;
@@ -78,64 +88,44 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.boat:hover img {
-  transform: translateY(200%); 
-} 
-
-@keyframes boatFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-22px);
-  }
-}
-
-@keyframes boatMove {
-  0% {
-    left: -30px; 
-  }
-  100% {
-    left: 100%;
-  }
-}
 
 .water {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  transform: scaleX(1.5)
 }
 
 @keyframes waveMovement {
   0% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateX() rotate(0deg);
   }
   50% {
-    transform: translateX(15%) rotate(2deg);
+    transform: translateX(16%) rotate(2deg);
   }
   100% {
-    transform: translateX(0) rotate(0deg);
+    transform: translateX() rotate(0deg);
   }
 }
 
 .wave1 {
   position: absolute;
-  bottom: 145px;
+  bottom: 120px;
   width: 100%;
   height: 100%;
   background: rgb(8, 8, 185);
-  clip-path: path("M0,200 C100,150 300,250 500,200 C700,150 900,250 1000,200 L1000,400 L0,400 Z");
+  clip-path: path("M0,190 C200,120 400,190 600,150 C800,110 1000,180 1200,130 L1200,400 L0,400 Z");
   animation: waveMovement 6s ease-in-out infinite;
 }
 
 .wave2 {
   position: absolute;
-  bottom: 20px;
+  bottom: 80px;
   width: 100%;
   height: 100%;
   background: rgb(80, 149, 228);
-  clip-path: path("M0,100 C150,200 350,0 500,100 C650,200 850,0 1000,100 L1000,200 L0,200 Z");
+  clip-path: path("M0,190 C200,120 400,190 600,150 C800,110 1000,180 1200,130 L1200,400 L0,400 Z");
   animation: waveMovement 6s ease-in-out infinite 1s;
 }
 
@@ -147,5 +137,14 @@ body {
   background: rgb(8, 8, 185); 
   clip-path: path("M0,190 C200,120 400,190 600,150 C800,110 1000,180 1200,130 L1200,400 L0,400 Z");
   animation: waveMovement 6s ease-in-out infinite 2s; 
-  z-index: 2;
+}
+
+.dolphin {
+  position: absolute; 
+  bottom: 220px; 
+  left: 70%; 
+  width: 145px; 
+  height: auto; 
+  z-index: 10; 
+  animation: bounce 2s infinite;
 }
